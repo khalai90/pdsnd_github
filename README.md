@@ -5,7 +5,7 @@
 Bike share analysis
 
 ### Description
-Describe what your project is about and what it does
+Interactive tool to see stats on bikeshare performance. Filtered by user input.
 
 ### Files used
 Include the files used
