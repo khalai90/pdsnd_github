@@ -84,6 +84,10 @@ def load_data(city, month, day):
 
     return df
 
+def check_data(df):
+    print("Nan in each columns" , df.isnull().sum(), sep='\n')
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -193,6 +197,7 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
+        check_data(df)
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
@@ -201,9 +206,9 @@ def main():
         else:
             user_stats(df)
 
-        preview_data = input('\nWould you like to preview top 5 rows of your selected data? Enter yes or no.\n')
+        preview_data = input('\nWould you like to preview top 10 rows of your selected data? Enter yes or no.\n')
         if preview_data.lower() =='yes':
-            print(df.head())
+            print(df.head(10))
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
