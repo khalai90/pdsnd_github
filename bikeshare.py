@@ -199,9 +199,9 @@ def main():
         else:
             user_stats(df)
 
-        preview_data = input('\nWould you like to preview top 5 rows of your selected data? Enter yes or no.\n')
+        preview_data = input('\nWould you like to preview top 10 rows of your selected data? Enter yes or no.\n')
         if preview_data.lower() =='yes':
-            print(df.head())
+            print(df.head(10))
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
