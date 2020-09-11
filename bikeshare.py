@@ -1,3 +1,5 @@
+#This code provides stats based on bikeshare information from three cities
+
 import time
 import pandas as pd
 import numpy as np
